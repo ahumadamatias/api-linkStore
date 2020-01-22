@@ -4,3 +4,6 @@ lib64
 pyvenv.cfg
 share/
 .env
+app/__pycache__
+__pycache__/
+app/models/__pycache__/

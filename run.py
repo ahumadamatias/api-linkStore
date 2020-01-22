@@ -3,7 +3,7 @@ from flask import Flask
 from flask_mail import Mail, Message
 from dotenv import load_dotenv
 from flask_sqlalchemy import SQLAlchemy
-from flask_cors import CORS
+#from flask_cors import CORS
 
 load_dotenv()
 
@@ -14,4 +14,4 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://'+os.getenv('DB_USERNAM
 
 db = SQLAlchemy(app)
 mail = Mail(app)
-cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
+#cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
