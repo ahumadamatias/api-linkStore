@@ -3,10 +3,7 @@ from flask import Flask
 from flask_mail import Mail, Message
 from dotenv import load_dotenv
 from flask_sqlalchemy import SQLAlchemy
-from flask_jwt_extended import (
-    JWTManager , jwt_required , create_access_token ,
-    get_jwt_identity
-)
+from flask_jwt_extended import JWTManager
 #from flask_cors import CORS
 
 load_dotenv()
