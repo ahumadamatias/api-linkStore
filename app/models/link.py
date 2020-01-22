@@ -11,7 +11,7 @@ class Link(db.Model):
     # Method to convert an object to a json
     def a_json(self):
         link_json = {
-            'id_link': url_for('linkFindById', id=self.id_link, _external=True),
+            'id_link': url_for('get_link_by_id', id=self.id_link, _external=True),
             'name_link': self.name_link,
             'link': self.link,
             'id_user': self.id_user

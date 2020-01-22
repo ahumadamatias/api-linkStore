@@ -22,7 +22,7 @@ class User(db.Model):
     # Method to convert an object to a json
     def a_json(self):
         user_json = {
-            'id_user': url_for('userFindById', id=self.id_user, _external=True),
+            'id_user': url_for('get_user_by_id', id=self.id_user, _external=True),
             'name_user': self.name_user,
             'last_name_user': self.last_name_user,
             'email_user': self.email_user,
