@@ -21,8 +21,8 @@ def getLinkById(id):
 @app.route('/api/link/search/<name>', methods=["GET"])
 @jwt_required
 def getLinkByName(name):
-    link = get_link_by_name(name)
-    return jsonify(link.a_json())
+    links = get_link_by_name(name)
+    return jsonify({ 'Links' : [ link.a_json() for link in links ]})
 
 
 @app.route('/api/link', methods=["POST"])

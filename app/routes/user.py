@@ -17,10 +17,14 @@ def getUserById(id):
     return jsonify(user.a_json())
 
 @app.route('/api/user/signup', methods=["POST"])
-def createUser():
-    user = User.desde_json(request.json)
-    db.session.add(user)
-    db.session.commit()
+def signupUser():
+    email = request.json.get('email_user', None)
+    if get_user_by_email(email) is None:
+        user = User.desde_json(request.json)
+        db.session.add(user)
+        db.session.commit()
+    else:
+        return jsonify({"msg":"Choose another email, the email already exists!!!"})
     return jsonify(user.a_json()), 201, {'Location': url_for('getUserById', id=user.id_user, _external=True)}
 
 @app.route('/api/user/signin', methods=["POST"])
@@ -44,9 +48,3 @@ def updateUser(id):
     db.session.add(user)
     db.session.commit()
     return jsonify(user.a_json())
-
-@app.route('/protected', methods=["GET"])
-@jwt_required
-def protected():
-    current_user = get_jwt_identity()
-    return jsonify(logged_in_as = current_user), 200
