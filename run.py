@@ -4,7 +4,7 @@ from flask_mail import Mail, Message
 from dotenv import load_dotenv
 from flask_sqlalchemy import SQLAlchemy
 from flask_jwt_extended import JWTManager
-#from flask_cors import CORS
+from flask_cors import CORS
 
 load_dotenv()
 
@@ -17,7 +17,7 @@ app.config['JWT_SECRET_KEY'] = os.getenv('SECRET_KEY')
 db = SQLAlchemy(app)
 jwt = JWTManager (app)
 mail = Mail(app)
-#cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 if __name__ == "__main__":
     from app.routes.link import *

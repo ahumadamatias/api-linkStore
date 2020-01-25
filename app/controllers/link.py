@@ -10,3 +10,6 @@ def get_link_by_id(id):
 def get_link_by_name(name):
     return db.session.query(Link).filter(Link.name_link.ilike("%" + name + "%"))
 
+def get_link_by_user_id(id):
+    return db.session.query(Link).filter(Link.id_user == id)
+

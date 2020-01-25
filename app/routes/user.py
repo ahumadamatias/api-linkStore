@@ -24,13 +24,13 @@ def signupUser():
         db.session.add(user)
         db.session.commit()
     else:
-        return jsonify({"msg":"Choose another email, the email already exists!!!"})
+        return jsonify({"msg":"false"})
     return jsonify(user.a_json()), 201, {'Location': url_for('getUserById', id=user.id_user, _external=True)}
 
-@app.route('/api/user/signin', methods=["POST"])
+@app.route('/api/user/login', methods=["POST"])
 def singinUser():
-    email = request.json.get('email_user', None)
-    password = request.json.get('password_user', None)
+    email = request.json.get('emailUser', None)
+    password = request.json.get('passwordUser', None)
     user = get_user_by_email(email)
     if user is not None and user.verify_password(password):
         access_token = create_access_token(identity = email)

@@ -22,8 +22,14 @@ def getLinkById(id):
 @jwt_required
 def getLinkByName(name):
     links = get_link_by_name(name)
-    return jsonify({ 'Links' : [ link.a_json() for link in links ]})
+    return jsonify({ 'Links' : [ link.a_json() for link in links ] })
 
+@app.route('/api/links/user/<id>', methods=["GET"])
+@jwt_required
+def getLinkByUserEmail(id):
+    links = get_link_by_user_id(id)
+    return jsonify({ 'Links' : [ link.a_json() for link in links ] })
+    
 
 @app.route('/api/link', methods=["POST"])
 @jwt_required
