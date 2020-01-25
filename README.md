@@ -6,7 +6,8 @@ En este repositorio se encuentra la Api de la app web ya que he decidido utiliza
 
 Los créditos de la idea le pertenecen a Fazt Code canal de Youtube.
 
-#Images
+Image
+-------------
 
 ![](https://i.imgur.com/VVZfYK8.png)
 
