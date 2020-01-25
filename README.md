@@ -1,6 +1,6 @@
 LinkStore Api
 =============
-Aplicación Web que permite registrarnos como usuarios, y almacenar url que son de nuetro interés, por simplemente para no olvidarnos. Podremos asignarle a las url un nombre para identificarlas.
+Aplicación Web que permite almacenar url que son de nuetro interés, o simplemente para no olvidarnos si esta es un recurso para utilizar. Podremos asignarle a las url un nombre para identificarlas, además de registrarnos en la app web.
 
 En este repositorio se encuentra la Api de la app web ya que he decidido utilizar una arquitectura de microservicios.
 
